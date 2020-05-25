@@ -15,17 +15,17 @@ class MyClient extends AkairoClient {
 			},
 		);
 		this.commandHandler = new CommandHandler(this, {
-			directory: './commands/',
+			directory: './src/commands/',
 			prefix: 'k!',
 			allowMention: true,
 			blockBots: true,
 			blockClient: true,
 		});
 		this.inhibitorHandler = new InhibitorHandler(this, {
-			directory: './inhibitors/',
+			directory: './src/inhibitors/',
 		});
 		this.listenerHandler = new ListenerHandler(this, {
-			directory: './events/',
+			directory: './src/events/',
 		});
 		this.commandHandler.loadAll();
 		this.commandHandler.useInhibitorHandler(this.inhibitorHandler);

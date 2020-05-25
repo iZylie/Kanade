@@ -9,10 +9,14 @@ class PingCommand extends Command {
 			typing: true,
 			description: '',
 			ownerOnly: true,
+			channel: 'guild',
 		});
 	}
 
 	async exec(message) {
+		if (this.channelID === 'guild') {
+			message.reply("You can't use this command outside of Ayala!");
+		}
 		const pingEmbed = new Discord.MessageEmbed()
 			.setDescription(`Pong!`)
 			.setColor(29128);
@@ -24,7 +28,6 @@ class PingCommand extends Command {
 			.setDescription(`Pong!\n🔂 **RTT**: ${timeDiff} ms`)
 			.setColor(29128);
 		sent.edit(editEmbed);
-		console.log(this.ownerOnly);
 	}
 }
 

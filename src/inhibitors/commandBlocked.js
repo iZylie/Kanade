@@ -5,7 +5,6 @@ class CommandBlockedListener extends Listener {
 		super('commandBlocked', {
 			emitter: 'commandHandler',
 			event: 'commandBlocked',
-			type: 'all',
 		});
 	}
 
