@@ -1,5 +1,9 @@
-const { AkairoClient, CommandHandler } = require('discord-akairo');
-
+const {
+	AkairoClient,
+	CommandHandler,
+	InhibitorHandler,
+	ListenerHandler,
+} = require('discord-akairo');
 class MyClient extends AkairoClient {
 	constructor() {
 		super(
@@ -11,15 +15,22 @@ class MyClient extends AkairoClient {
 			},
 		);
 		this.commandHandler = new CommandHandler(this, {
-			// Options for the command handler goes here.
 			directory: './commands/',
-			prefix: 'k!',
-			blockBots: true,
-			allowMention: true,
+			prefix: 'k!', // or ['?', '!']
+		});
+		this.inhibitorHandler = new InhibitorHandler(this, {
+			directory: './inhibitors/',
+		});
+		this.listenerHandler = new ListenerHandler(this, {
+			directory: './events/',
 		});
 		this.commandHandler.loadAll();
+		this.commandHandler.useInhibitorHandler(this.inhibitorHandler);
+		this.inhibitorHandler.loadAll();
+		this.commandHandler.useListenerHandler(this.listenerHandler);
+		this.listenerHandler.loadAll();
 	}
 }
 
 const client = new MyClient();
-client.login('NzE0MzU4MTM3ODU5MDgwMjIz.XstxNg.htlGxWTUqk05PERog-j6e6gCkbY');
+client.login('NzE0MzU4MTM3ODU5MDgwMjIz.Xst97Q.iVzszgZv2CQ3xUNGDy482jEOpYA');
