@@ -29,6 +29,11 @@ class MyClient extends AkairoClient {
 		this.inhibitorHandler.loadAll();
 		this.commandHandler.useListenerHandler(this.listenerHandler);
 		this.listenerHandler.loadAll();
+		this.listenerHandler.setEmitters({
+			commandHandler: this.commandHandler,
+			inhibitorHandler: this.inhibitorHandler,
+			listenerHandler: this.listenerHandler,
+		});
 	}
 }
 
