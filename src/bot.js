@@ -14,6 +14,8 @@ class MyClient extends AkairoClient {
 			// Options for the command handler goes here.
 			directory: './commands/',
 			prefix: 'k!',
+			blockBots: true,
+			allowMention: true,
 		});
 		this.commandHandler.loadAll();
 	}
