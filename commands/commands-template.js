@@ -5,6 +5,10 @@ class commandNameCommand extends Command {
 	constructor() {
 		super('commandName', {
 			aliases: ['commandName', 'commandAliases'],
+			category: 'commandModule',
+			//? typing: true,
+			//? description: '',
+			//? ownerOnly: true,
 		});
 	}
 

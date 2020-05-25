@@ -5,6 +5,10 @@ class PingCommand extends Command {
 	constructor() {
 		super('ping', {
 			aliases: ['ping', 'latency'],
+			category: 'Utility',
+			typing: true,
+			description: '',
+			ownerOnly: true,
 		});
 	}
 
@@ -20,6 +24,7 @@ class PingCommand extends Command {
 			.setDescription(`Pong!\n🔂 **RTT**: ${timeDiff} ms`)
 			.setColor(29128);
 		sent.edit(editEmbed);
+		console.log(this.ownerOnly);
 	}
 }
 
