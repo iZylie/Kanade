@@ -5,11 +5,9 @@ class MemberCountCommand extends Command {
 	constructor() {
 		super('membercount', {
 			aliases: ['membercount', 'count', 'mc'],
-			category: 'Searches',
 			usage: 'k!membercount',
-			//? typing: true,
-			//? description: '',
-			//? ownerOnly: true,
+			cooldown: 3000,
+			description: 'Get the server member count.',
 		});
 	}
 
@@ -28,6 +26,11 @@ class MemberCountCommand extends Command {
 			.setAuthor('Total Amount of Members', null, null)
 			.setDescription(
 				`Total Members: ${ayalaMembers}\nExcluding Bots: ${ayalaSizeExceptBots}`,
+			)
+			.setFooter(
+				`Module: ${this.categoryID} / Cooldown ${
+					(this.cooldown / 1000) * 1
+				} seconds`,
 			);
 		if (message.channel.id !== defaultChannel.id) {
 			if (message.member.roles.cache.has('689163217624367198')) {

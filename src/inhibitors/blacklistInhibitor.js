@@ -4,12 +4,12 @@ class BlacklistInhibitor extends Inhibitor {
 	constructor() {
 		super('blacklist', {
 			reason: 'blacklist',
+			type: 'post',
 		});
 	}
 
 	exec(message) {
-		// He's a meanie!
-		const blacklist = [''];
+		const blacklist = [];
 		return blacklist.includes(message.author.id);
 	}
 }

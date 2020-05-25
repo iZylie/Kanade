@@ -8,7 +8,7 @@ class MyClient extends AkairoClient {
 	constructor() {
 		super(
 			{
-				ownerID: '488699894023061516', // or ['123992700587343872', '86890631690977280']
+				ownerID: '488699894023061516',
 			},
 			{
 				disableEveryone: true,
@@ -18,7 +18,9 @@ class MyClient extends AkairoClient {
 			directory: './src/commands/',
 			prefix: 'k!',
 			allowMention: true,
+			blockClient: true,
 			blockBots: true,
+			automateCategories: true,
 		});
 		this.inhibitorHandler = new InhibitorHandler(this, {
 			directory: './src/inhibitors/',
@@ -26,16 +28,16 @@ class MyClient extends AkairoClient {
 		this.listenerHandler = new ListenerHandler(this, {
 			directory: './src/events/',
 		});
-		this.commandHandler.loadAll();
-		this.commandHandler.useInhibitorHandler(this.inhibitorHandler);
-		this.inhibitorHandler.loadAll();
-		this.commandHandler.useListenerHandler(this.listenerHandler);
-		this.listenerHandler.loadAll();
 		this.listenerHandler.setEmitters({
 			commandHandler: this.commandHandler,
 			inhibitorHandler: this.inhibitorHandler,
 			listenerHandler: this.listenerHandler,
 		});
+		this.listenerHandler.loadAll();
+		this.inhibitorHandler.loadAll();
+		this.commandHandler.useInhibitorHandler(this.inhibitorHandler);
+		this.commandHandler.useListenerHandler(this.listenerHandler);
+		this.commandHandler.loadAll();
 	}
 }
 

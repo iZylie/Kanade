@@ -5,25 +5,33 @@ class PingCommand extends Command {
 	constructor() {
 		super('ping', {
 			aliases: ['ping', 'latency'],
-			category: 'Utility',
-			//typing: true,
-			description: '',
+			description: 'Use this to see your ping!',
+			cooldown: 3000,
 			ownerOnly: false,
-			//channel: 'guild',
 		});
 	}
 
 	async exec(message) {
 		const pingEmbed = new Discord.MessageEmbed()
 			.setDescription(`Pong!`)
-			.setColor(29128);
-		const sent = await message.reply(pingEmbed);
+			.setColor(29128)
+			.setFooter(
+				`Module: ${this.categoryID}\nCooldown ${
+					(this.cooldown / 1000) * 1
+				} seconds`,
+			);
+		const sent = await message.channel.send(pingEmbed);
 		const timeDiff =
 			(sent.editedAt || sent.createdAt) -
 			(message.editedAt || message.createdAt);
 		const editEmbed = new Discord.MessageEmbed()
-			.setDescription(`Pong!\n🔂 **RTT**: ${timeDiff} ms`)
-			.setColor(29128);
+			.setDescription(`🔂 **RTT**: ${timeDiff} ms`)
+			.setColor(29128)
+			.setFooter(
+				`Module: ${this.categoryID}\nCooldown ${
+					(this.cooldown / 1000) * 1
+				} seconds`,
+			);
 		sent.edit(editEmbed);
 	}
 }
