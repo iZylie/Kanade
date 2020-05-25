@@ -6,17 +6,14 @@ class PingCommand extends Command {
 		super('ping', {
 			aliases: ['ping', 'latency'],
 			category: 'Utility',
-			typing: true,
+			//typing: true,
 			description: '',
-			ownerOnly: true,
-			channel: 'guild',
+			ownerOnly: false,
+			//channel: 'guild',
 		});
 	}
 
 	async exec(message) {
-		if (this.channelID === 'guild') {
-			message.reply("You can't use this command outside of Ayala!");
-		}
 		const pingEmbed = new Discord.MessageEmbed()
 			.setDescription(`Pong!`)
 			.setColor(29128);

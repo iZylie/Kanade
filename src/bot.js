@@ -19,7 +19,6 @@ class MyClient extends AkairoClient {
 			prefix: 'k!',
 			allowMention: true,
 			blockBots: true,
-			blockClient: true,
 		});
 		this.inhibitorHandler = new InhibitorHandler(this, {
 			directory: './src/inhibitors/',
