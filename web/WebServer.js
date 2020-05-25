@@ -9,8 +9,6 @@ const server = http
 	})
 	.listen(3000);
 
-console.log('WebServer is online!');
-
 setInterval(() => {
 	http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
