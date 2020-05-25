@@ -4,6 +4,7 @@ const {
 	InhibitorHandler,
 	ListenerHandler,
 } = require('discord-akairo');
+const config = require('./config');
 class MyClient extends AkairoClient {
 	constructor() {
 		super(
@@ -42,4 +43,4 @@ class MyClient extends AkairoClient {
 }
 
 const client = new MyClient();
-client.login('NzE0MzU4MTM3ODU5MDgwMjIz.Xst97Q.iVzszgZv2CQ3xUNGDy482jEOpYA');
+client.login(config.token);
