@@ -9,9 +9,9 @@ class CommandBlockedListener extends Listener {
 	}
 
 	exec(message, command, reason) {
-		if (reason === 'blacklist') {
-			console.log(
-				`${message.author.username} was blocked from using ${command.id} because of ${reason}!`,
+		if (reason == 'being blacklisted') {
+			message.channel.send(
+				`${message.author.username} was blocked from using \`${command.id}\` command because of ${reason}!`,
 			);
 		}
 	}

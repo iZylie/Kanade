@@ -4,7 +4,7 @@ const {
 	InhibitorHandler,
 	ListenerHandler,
 } = require('discord-akairo');
-const config = require('./config');
+require('dotenv').config();
 class MyClient extends AkairoClient {
 	constructor() {
 		super(
@@ -25,9 +25,11 @@ class MyClient extends AkairoClient {
 		});
 		this.inhibitorHandler = new InhibitorHandler(this, {
 			directory: './src/inhibitors/',
+			automateCategories: true,
 		});
 		this.listenerHandler = new ListenerHandler(this, {
 			directory: './src/events/',
+			automateCategories: true,
 		});
 		this.listenerHandler.setEmitters({
 			commandHandler: this.commandHandler,
@@ -43,4 +45,4 @@ class MyClient extends AkairoClient {
 }
 
 const client = new MyClient();
-client.login(config.token);
+client.login();

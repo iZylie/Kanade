@@ -6,7 +6,6 @@ class ReadyListener extends Listener {
 		super('ready', {
 			emitter: 'client',
 			event: 'ready',
-			type: 'once',
 		});
 	}
 
@@ -15,6 +14,7 @@ class ReadyListener extends Listener {
 			(g) => g.id === '679484346553729024',
 		);
 		let AyalaMembers = Ayala.members.cache.filter((e) => !e.bot).size;
+		//todo this.client.user.setActivity('over Ayala~', { type: 'WATCHING' });
 		console.log(`I'm online in ${Ayala} with ${AyalaMembers} people!`);
 	}
 }

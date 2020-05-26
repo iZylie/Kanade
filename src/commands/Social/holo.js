@@ -39,4 +39,4 @@ class holoCommand extends Command {
 	}
 }
 
-module.exports = holoCommand;
+// module.exports = holoCommand;
