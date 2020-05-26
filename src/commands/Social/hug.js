@@ -21,12 +21,11 @@ class hugCommand extends Command {
 
 	async exec(message, args) {
 		const hug = await neko.sfw.hug();
-		const userTohug = args.member;
-		if (userTohug) {
+		if (args.member) {
 			const userTohugEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} hugs ${userTohug.user.username}!`,
+					`${message.author.username} hugs ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					hug.url,
 				)

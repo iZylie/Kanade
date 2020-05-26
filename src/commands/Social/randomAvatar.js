@@ -7,12 +7,6 @@ class avatarCommand extends Command {
 	constructor() {
 		super('randomavatar', {
 			aliases: ['randomavatar', 'ravatar'],
-			args: [
-				{
-					id: 'member',
-					type: 'member',
-				},
-			],
 			channel: 'guild',
 			cooldown: 10000,
 			description: 'Sends a random avatar.',
@@ -24,7 +18,7 @@ class avatarCommand extends Command {
 		const avatarEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
 			.setAuthor(
-				`${message.author.username}, there, a random avatar, you might like one of them!`,
+				`${message.author.username}, there, a random avatar, you might like it!`,
 				`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 				avatar.url,
 			)

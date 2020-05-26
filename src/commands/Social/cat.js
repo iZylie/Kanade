@@ -7,24 +7,18 @@ class catCommand extends Command {
 	constructor() {
 		super('cat', {
 			aliases: ['cat', 'meow'],
-			args: [
-				{
-					id: 'member',
-					type: 'member',
-				},
-			],
 			channel: 'guild',
 			cooldown: 10000,
 			description: 'Sends a cat image/gif.',
 		});
 	}
 
-	async exec(message, args) {
+	async exec(message) {
 		const cat = await neko.sfw.meow();
 		const catEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
 			.setAuthor(
-				`${message.author.username}, how cute, isn't it?`,
+				`How cute, isn't it?`,
 				`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 				cat.url,
 			)

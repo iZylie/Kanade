@@ -7,12 +7,6 @@ class waifuCommand extends Command {
 	constructor() {
 		super('waifu', {
 			aliases: ['waifu'],
-			args: [
-				{
-					id: 'member',
-					type: 'member',
-				},
-			],
 			channel: 'guild',
 			cooldown: 10000,
 			description: 'Sends a random waifu.',

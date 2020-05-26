@@ -21,12 +21,11 @@ class cuddleCommand extends Command {
 
 	async exec(message, args) {
 		const cuddle = await neko.sfw.cuddle();
-		const userTocuddle = args.member;
-		if (userTocuddle) {
-			const userTocuddleEmbed = new Discord.MessageEmbed()
+		if (args.member) {
+			const cuddleTo = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} cuddles ${userTocuddle.user.username}!`,
+					`${message.author.username} cuddles ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					cuddle.url,
 				)
@@ -37,7 +36,7 @@ class cuddleCommand extends Command {
 						(this.cooldown / 1000) * 1
 					} seconds`,
 				);
-			message.channel.send(userTocuddleEmbed);
+			message.channel.send(cuddleTo);
 		} else {
 			const cuddleEmbed = new Discord.MessageEmbed()
 				.setColor(29128)

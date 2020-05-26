@@ -21,12 +21,11 @@ class SmugCommand extends Command {
 
 	async exec(message, args) {
 		const Smug = await neko.sfw.smug();
-		const SmugAt = args.member;
-		if (SmugAt) {
+		if (args.member) {
 			const SmugAtEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} scoffs ${SmugAt.user.username}.`,
+					`${message.author.username} scoffs ${args.member.user.username}.`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					Smug.url,
 				)

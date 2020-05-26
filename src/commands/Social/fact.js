@@ -7,19 +7,13 @@ class factCommand extends Command {
 	constructor() {
 		super('fact', {
 			aliases: ['fact'],
-			args: [
-				{
-					id: 'member',
-					type: 'member',
-				},
-			],
 			channel: 'guild',
 			cooldown: 10000,
 			description: 'Sends a random fact.',
 		});
 	}
 
-	async exec(message, args) {
+	async exec(message) {
 		const fact = await neko.sfw.fact();
 		const factEmbed = new Discord.MessageEmbed()
 			.setColor(29128)

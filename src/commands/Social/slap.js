@@ -21,12 +21,11 @@ class SlapCommand extends Command {
 
 	async exec(message, args) {
 		const Slap = await neko.sfw.slap();
-		const userToSlap = args.member;
-		if (userToSlap) {
+		if (args.member) {
 			const userToSlapEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} Slaps ${userToSlap.user.username}!`,
+					`${message.author.username} Slaps ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					Slap.url,
 				)

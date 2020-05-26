@@ -7,19 +7,13 @@ class holoCommand extends Command {
 	constructor() {
 		super('holo', {
 			aliases: ['holo'],
-			args: [
-				{
-					id: 'member',
-					type: 'member',
-				},
-			],
 			channel: 'guild',
 			cooldown: 10000,
 			description: 'Sends a radom holo image/gif.',
 		});
 	}
 
-	async exec(message, args) {
+	async exec(message) {
 		const holo = await neko.sfw.holo();
 		const holoEmbed = new Discord.MessageEmbed()
 			.setColor(29128)

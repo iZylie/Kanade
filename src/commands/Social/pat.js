@@ -21,12 +21,11 @@ class PatCommand extends Command {
 
 	async exec(message, args) {
 		const Pat = await neko.sfw.pat();
-		const userToPat = args.member;
-		if (userToPat) {
+		if (args.member) {
 			const userToPatEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} pets ${userToPat.user.username}!`,
+					`${message.author.username} pets ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					Pat.url,
 				)

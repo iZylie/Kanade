@@ -21,12 +21,11 @@ class TickleCommand extends Command {
 
 	async exec(message, args) {
 		const Tickle = await neko.sfw.tickle();
-		const userToTickle = args.member;
-		if (userToTickle) {
+		if (args.member) {
 			const userToTickleEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} Tickles ${userToTickle.user.username}!`,
+					`${message.author.username} Tickles ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					Tickle.url,
 				)

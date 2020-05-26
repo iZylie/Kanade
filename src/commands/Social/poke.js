@@ -21,12 +21,11 @@ class PokeCommand extends Command {
 
 	async exec(message, args) {
 		const Poke = await neko.sfw.poke();
-		const userToPoke = args.member;
-		if (userToPoke) {
+		if (args.member) {
 			const userToPokeEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} Pokes ${userToPoke.user.username}!`,
+					`${message.author.username} Pokes ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					Poke.url,
 				)

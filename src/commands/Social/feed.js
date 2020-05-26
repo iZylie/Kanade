@@ -21,12 +21,11 @@ class feedCommand extends Command {
 
 	async exec(message, args) {
 		const feed = await neko.sfw.feed();
-		const userTofeed = args.member;
-		if (userTofeed) {
-			const userTofeedEmbed = new Discord.MessageEmbed()
+		if (args.member) {
+			const feedThemEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} feeds ${userTofeed.user.username}!`,
+					`${message.author.username} feeds ${args.member.user.username}!`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					feed.url,
 				)
@@ -37,7 +36,7 @@ class feedCommand extends Command {
 						(this.cooldown / 1000) * 1
 					} seconds`,
 				);
-			message.channel.send(userTofeedEmbed);
+			message.channel.send(feedThemEmbed);
 		} else {
 			const feedEmbed = new Discord.MessageEmbed()
 				.setColor(29128)

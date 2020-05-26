@@ -21,12 +21,11 @@ class kissCommand extends Command {
 
 	async exec(message, args) {
 		const kiss = await neko.sfw.kiss();
-		const userTokiss = args.member;
-		if (userTokiss) {
+		if (args.member) {
 			const userTokissEmbed = new Discord.MessageEmbed()
 				.setColor(29128)
 				.setAuthor(
-					`${message.author.username} is kissing ${userTokiss.user.username}! *blushes*`,
+					`${message.author.username} is kissing ${args.member.user.username}! *blushes*`,
 					`${message.author.avatarURL({ dynamic: true, size: 2048 })}`,
 					kiss.url,
 				)
