@@ -6,6 +6,7 @@ class MemberCountCommand extends Command {
 		super('membercount', {
 			aliases: ['membercount', 'count', 'mc'],
 			usage: 'k!membercount',
+			channel: 'guild',
 			cooldown: 3000,
 			description: 'Get the server member count.',
 		});
