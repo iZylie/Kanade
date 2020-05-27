@@ -15,7 +15,10 @@ class SlapCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Slap a user, Slap yourself if no user provided.',
+			description: {
+				description: 'Slap a user, slap yourself if no user provided.',
+				usage: '`k!slap` or `k!slap @user`',
+			},
 		});
 	}
 

@@ -9,7 +9,10 @@ class avatarCommand extends Command {
 			aliases: ['randomavatar', 'ravatar'],
 			channel: 'guild',
 			cooldown: 10000,
-			description: 'Sends a random avatar.',
+			description: {
+				description: 'Sends a random avatar.',
+				usage: '`k!randomavatar`',
+			},
 		});
 	}
 

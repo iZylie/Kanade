@@ -15,7 +15,10 @@ class TickleCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Tickle a user, Tickle yourself if no user provided.',
+			description: {
+				description: 'Tickle to a user, tickle yourself if no user provided.',
+				usage: '`k!tickle` or `k!tickle @user`',
+			},
 		});
 	}
 

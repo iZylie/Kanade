@@ -9,7 +9,7 @@ class factCommand extends Command {
 			aliases: ['fact'],
 			channel: 'guild',
 			cooldown: 10000,
-			description: 'Sends a random fact.',
+			description: { description: 'Sends a random fact.', usage: '`k!fact`' },
 		});
 	}
 

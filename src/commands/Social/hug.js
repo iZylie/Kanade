@@ -15,7 +15,10 @@ class hugCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Hug a user, hug yourself if no user provided.',
+			description: {
+				description: 'Hug a user, hug yourself if no user provided.',
+				usage: '`k!hug` or `k!hug @user`',
+			},
 		});
 	}
 

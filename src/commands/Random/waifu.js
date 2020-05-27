@@ -9,7 +9,10 @@ class waifuCommand extends Command {
 			aliases: ['waifu'],
 			channel: 'guild',
 			cooldown: 10000,
-			description: 'Sends a random waifu.',
+			description: {
+				description: 'Sends a random waifu.',
+				usage: '`k!waifu`',
+			},
 		});
 	}
 

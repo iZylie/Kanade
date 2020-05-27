@@ -15,7 +15,10 @@ class SmugCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Smug at user, Smug as an emote if no user provided.',
+			description: {
+				description: 'Smug to a user, smug yourself if no user provided.',
+				usage: '`k!smug` or `k!smug @user`',
+			},
 		});
 	}
 

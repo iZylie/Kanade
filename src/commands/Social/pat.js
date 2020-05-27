@@ -15,7 +15,10 @@ class PatCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Pat a user, Pat yourself if no user provided.',
+			description: {
+				description: 'Pat a user, pat yourself if no user provided.',
+				usage: '`k!pat` or `k!pat @user`',
+			},
 		});
 	}
 

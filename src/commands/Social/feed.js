@@ -15,7 +15,10 @@ class feedCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Feed a user, feed yourself if no user provided.',
+			description: {
+				description: 'Feed a user, feed yourself if no user provided.',
+				usage: '`k!feed` or `k!feed @user`',
+			},
 		});
 	}
 

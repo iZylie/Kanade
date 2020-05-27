@@ -1,12 +1,14 @@
 const { Command } = require('discord-akairo');
 const Discord = require('discord.js');
-const constants = require('../../Util/constants');
 
 class ModulesCommand extends Command {
 	constructor() {
-		super('modules', {
-			aliases: ['modules', 'mdls'],
-			description: 'Lists all bot modules.',
+		super('categories', {
+			aliases: ['categories', 'ctgrs'],
+			description: {
+				description: 'Lists all bot categories.',
+				usage: '`k!categories` or `k!ctgrs`',
+			},
 		});
 	}
 	async exec(message) {

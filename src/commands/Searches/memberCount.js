@@ -4,11 +4,14 @@ const Discord = require('discord.js');
 class MemberCountCommand extends Command {
 	constructor() {
 		super('membercount', {
-			aliases: ['membercount', 'count', 'mc'],
+			aliases: ['membercount', 'mc'],
 			usage: 'k!membercount',
 			channel: 'guild',
 			cooldown: 3000,
-			description: 'Get the server member count.',
+			description: {
+				description: 'Get the server member count.',
+				usage: '`k!membercount`',
+			},
 		});
 	}
 

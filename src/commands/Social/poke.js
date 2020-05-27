@@ -15,7 +15,10 @@ class PokeCommand extends Command {
 			],
 			channel: 'guild',
 			cooldown: 20000,
-			description: 'Poke a user, Poke yourself if no user provided.',
+			description: {
+				description: 'Poke a user, poke yourself if no user provided.',
+				usage: '`k!poke` or `k!poke @user`',
+			},
 		});
 	}
 

@@ -9,7 +9,7 @@ class catCommand extends Command {
 			aliases: ['cat', 'meow'],
 			channel: 'guild',
 			cooldown: 10000,
-			description: 'Sends a cat image/gif.',
+			description: { description: 'Sends a cat image/gif.', usage: '`k!cat`' },
 		});
 	}
 

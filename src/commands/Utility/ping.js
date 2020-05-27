@@ -6,7 +6,10 @@ class PingCommand extends Command {
 		super('ping', {
 			aliases: ['ping', 'latency'],
 			category: 'Utility',
-			description: 'Use this to see your ping!',
+			description: {
+				description: 'Use this to see your ping!',
+				usage: '`k!ping`',
+			},
 			cooldown: 5000,
 		});
 	}
