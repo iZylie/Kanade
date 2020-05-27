@@ -14,7 +14,7 @@ class cuddleCommand extends Command {
 				},
 			],
 			channel: 'guild',
-			cooldown: 10000,
+			cooldown: 20000,
 			description: 'Cuddle a user, cuddle yourself if no user provided.',
 		});
 	}

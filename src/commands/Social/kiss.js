@@ -14,7 +14,7 @@ class kissCommand extends Command {
 				},
 			],
 			channel: 'guild',
-			cooldown: 10000,
+			cooldown: 20000,
 			description: 'Kiss a user, kiss yourself if no user provided.',
 		});
 	}
