@@ -10,7 +10,7 @@ class SlapCommand extends Command {
 			args: [
 				{
 					id: 'member',
-					type: 'member',
+					type: 'memberMention',
 				},
 			],
 			channel: 'guild',

@@ -10,7 +10,7 @@ class kissCommand extends Command {
 			args: [
 				{
 					id: 'member',
-					type: 'member',
+					type: 'memberMention',
 				},
 			],
 			channel: 'guild',
