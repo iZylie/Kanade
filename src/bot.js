@@ -28,7 +28,7 @@ class MyClient extends AkairoClient {
 			automateCategories: true,
 		});
 		this.listenerHandler = new ListenerHandler(this, {
-			directory: './src/events/',
+			directory: './src/listeners/',
 			automateCategories: true,
 		});
 		this.listenerHandler.setEmitters({
