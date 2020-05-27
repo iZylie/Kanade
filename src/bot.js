@@ -18,10 +18,10 @@ class MyClient extends AkairoClient {
 		this.commandHandler = new CommandHandler(this, {
 			directory: './src/commands/',
 			prefix: 'k!',
+			automateCategories: true,
 			allowMention: true,
 			blockClient: true,
 			blockBots: true,
-			automateCategories: true,
 		});
 		this.inhibitorHandler = new InhibitorHandler(this, {
 			directory: './src/inhibitors/',

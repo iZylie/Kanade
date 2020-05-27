@@ -5,8 +5,8 @@ const neko = new client();
 
 class PokeCommand extends Command {
 	constructor() {
-		super('Poke', {
-			aliases: ['Poke'],
+		super('poke', {
+			aliases: ['poke'],
 			args: [
 				{
 					id: 'member',

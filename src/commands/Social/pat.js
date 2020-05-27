@@ -5,8 +5,8 @@ const neko = new client();
 
 class PatCommand extends Command {
 	constructor() {
-		super('Pat', {
-			aliases: ['Pat'],
+		super('pat', {
+			aliases: ['pat'],
 			args: [
 				{
 					id: 'member',

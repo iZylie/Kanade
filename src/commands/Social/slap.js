@@ -5,8 +5,8 @@ const neko = new client();
 
 class SlapCommand extends Command {
 	constructor() {
-		super('Slap', {
-			aliases: ['Slap'],
+		super('slap', {
+			aliases: ['slap'],
 			args: [
 				{
 					id: 'member',

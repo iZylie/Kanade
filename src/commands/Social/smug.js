@@ -5,8 +5,8 @@ const neko = new client();
 
 class SmugCommand extends Command {
 	constructor() {
-		super('Smug', {
-			aliases: ['Smug'],
+		super('smug', {
+			aliases: ['smug'],
 			args: [
 				{
 					id: 'member',

@@ -5,8 +5,8 @@ const neko = new client();
 
 class TickleCommand extends Command {
 	constructor() {
-		super('Tickle', {
-			aliases: ['Tickle'],
+		super('tickle', {
+			aliases: ['tickle'],
 			args: [
 				{
 					id: 'member',

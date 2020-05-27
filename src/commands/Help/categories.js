@@ -1,6 +1,6 @@
 const { Command } = require('discord-akairo');
 const Discord = require('discord.js');
-const { allModules } = require('../../constants');
+const constants = require('../../Util/constants');
 
 class ModulesCommand extends Command {
 	constructor() {
@@ -12,10 +12,12 @@ class ModulesCommand extends Command {
 	async exec(message) {
 		const modulesEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
-			.setTitle('List of modules:')
-			.setDescription(allModules)
+			.setTitle('List of Categories')
+			.setDescription(
+				this.client.commandHandler.categories.map((m) => `• ${m}`).join('\n'),
+			)
 			.setFooter(
-				'ℹ️ Type `k!cmds ModuleName` to get a list of commands in that module. eg `k!cmds games`',
+				'ℹ️ Type `k!cmds CategoryName` to get a list of commands in that category. eg `k!cmds help`',
 			);
 		message.channel.send(modulesEmbed);
 	}

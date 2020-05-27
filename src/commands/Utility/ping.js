@@ -5,9 +5,9 @@ class PingCommand extends Command {
 	constructor() {
 		super('ping', {
 			aliases: ['ping', 'latency'],
+			category: 'Utility',
 			description: 'Use this to see your ping!',
-			cooldown: 3000,
-			ownerOnly: false,
+			cooldown: 5000,
 		});
 	}
 
