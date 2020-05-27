@@ -1,14 +1,3 @@
-//* MODULES
-// const Categories = [
-// 	'CustomReactions',
-// 	'Gambling',
-// 	'Games',
-// 	'Help',
-// 	'Random',
-// 	'Searches',
-// 	'Social',
-// 	'Utility',
-// ];
 //* FORMATTER
 const table = require('text-table');
 const chunk = (array, size) => {
@@ -22,6 +11,6 @@ const chunk = (array, size) => {
 };
 //* FORMATTER FUNCTION
 const thingsFormatted = (things) =>
-	table(chunk(things.flat(), 4), { align: ['l', 'l', 'l', 'l'], hsep: '  ' });
+	table(chunk(things.flat(), 2), { align: ['l', ' l'], hsep: '  ' });
 //* EXPORT
 module.exports = { thingsFormatted };
