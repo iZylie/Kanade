@@ -21,7 +21,6 @@ class ShippingCommand extends Command {
 					type: 'memberMention',
 				},
 			],
-			ownerOnly: true,
 		});
 	}
 	async exec(message, args) {
