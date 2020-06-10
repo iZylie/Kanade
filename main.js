@@ -1,3 +1,3 @@
 /* Let the fun begin :D */
-require('./web/WebServer');
-require('./src/bot');
+require("./web/WebServer");
+require("./src/bot");
