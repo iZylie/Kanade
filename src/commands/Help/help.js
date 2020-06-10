@@ -20,21 +20,59 @@ class HelpCommand extends Command {
 	}
 	async exec(message, args) {
 		const prefix = this.client.commandHandler.prefix;
-		//* DM EMBED
-		//#region DM EMBED
+		const zyla = this.client.users.cache.find(
+			u => u.id === "488699894023061516"
+		);
 		const dmHelpEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
-			.addField(
-				"Useful help commands:",
-				`\`${prefix}categories\` Lists all bot categories.\n\`${prefix}h commandName\` Shows some help about a specific command.\n\`${prefix}commands categoryName\` Lists all commands in a category`
+			.setTitle("Who am I?")
+			//.setURL("https://discord.js.org/")
+			.setAuthor(
+				"Hello, my name is Kanade!",
+				`${this.client.user.displayAvatarURL()}`
+			)
+			.setDescription(
+				`Hello, my name is Kanade Tachibana and I am a bot made for Ayala Discord. I can do many commands and even give you hugs. I am being worked on all the time by **${zyla.tag}** so if there is anything that I could be better at please inform my creator!`
 			)
 			.setThumbnail(
-				`${this.client.user.displayAvatarURL({ dynamic: true, size: 2048 })}`
+				`${this.client.guilds.cache
+					.find(g => g.id === "679484346553729024")
+					.iconURL({ dynamic: true, size: 256 })}`
+			)
+			.addFields(
+				{
+					name: "Basic Commands",
+					value: "You can see how you can start using my commands down below."
+				},
+				//EMPTY FIELD { name: "\u200B", value: "\u200B" },
+				{
+					name: "**help [h]**",
+					value:
+						"Either get some information about me and basic commands or helpful information about a command!"
+					//inline: true
+				},
+				{
+					name: "**categories [ctgrs]**",
+					value:
+						"View a list of all categories, read below to know how to see commands inside a category!"
+					//inline: true
+				},
+				{
+					name: "**commands [cmds]**",
+					value:
+						"View a list all of the bot's commands from a certain category. You have to specify the full name, ~~for now~~."
+					//inline: true
+				}
+			)
+			//.setImage("https://i.imgur.com/wSTFkRM.png")
+			//.setTimestamp()
+			.setFooter(
+				`Made by: ${zyla.tag}`,
+				`${zyla.displayAvatarURL({ dynamic: true })}`
 			);
+
 		if (!args.command) return message.author.send(dmHelpEmbed);
-		//#endregion
-		//* k!help command EMBED IF NO ALIASES
-		//#region k!help command EMBED IF NO ALIASES
+
 		const helpCmdWithoutAliasesEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
 			.addFields(
@@ -48,11 +86,10 @@ class HelpCommand extends Command {
 				}
 			)
 			.setFooter(`Category: ${args.command.categoryID}`);
+
 		if (args.command.aliases == args.command.id)
 			return message.channel.send(helpCmdWithoutAliasesEmbed);
-		//#endregion
-		//* k!help command EMBED IF ALIASES
-		//#region k!help command EMBED IF ALIASES
+
 		const helpCmdWithAliasesEmbed = new Discord.MessageEmbed()
 			.setColor(29128)
 			.addFields(
@@ -66,9 +103,9 @@ class HelpCommand extends Command {
 				}
 			)
 			.setFooter(`Category: ${args.command.categoryID}`);
+
 		if (args.command.aliases)
 			return message.channel.send(helpCmdWithAliasesEmbed);
-		//#endregion
 	}
 }
 

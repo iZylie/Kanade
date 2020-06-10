@@ -39,18 +39,17 @@ class CommandsCommand extends Command {
 
 			let commandFormatted = [
 				`k!${commandName}`,
-				`[${commandAliases.join(",")}]`
+				`[${commandAliases.join(", ")}]`
 			];
 
 			commands.push(commandFormatted);
 		});
-		const cmdsEmbed = new Discord.MessageEmbed()
-			.setColor(29128)
-			.addField(
-				`${args.category.charAt(0).toUpperCase() + args.category.slice(1)}`,
-				"```css\n" + constants.thingsFormatted(commands) + "```",
-				true
-			);
+		const cmdsEmbed = new Discord.MessageEmbed().setColor(29128).addField(
+			// `${args.category.charAt(0).toUpperCase() + args.category.slice(1)}`,
+			`${category}`,
+			"```css\n" + constants.thingsFormatted(commands) + "```",
+			true
+		);
 		return message.channel.send(cmdsEmbed);
 	}
 }
