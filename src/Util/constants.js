@@ -11,8 +11,8 @@ const chunk = (array, size) => {
 };
 //* FORMATTER FUNCTION
 const thingsFormatted = things =>
-	table(chunk(things.flat(), 2), {
-		align: ["l", " l"],
+	table(chunk(things.flat(), 4), {
+		align: ["l", "l", "l", "l"],
 		hsep: "  "
 	});
 //* EXPORT
