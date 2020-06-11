@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const client = require("nekos.life");
 const neko = new client();
 
-class feedCommand extends Command {
+class FeedCommand extends Command {
 	constructor() {
 		super("feed", {
 			aliases: ["feed"],
@@ -56,4 +56,4 @@ class feedCommand extends Command {
 	}
 }
 
-module.exports = feedCommand;
+module.exports = FeedCommand;

@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const client = require("nekos.life");
 const neko = new client();
 
-class cuddleCommand extends Command {
+class CuddleCommand extends Command {
 	constructor() {
 		super("cuddle", {
 			aliases: ["cuddle"],
@@ -56,4 +56,4 @@ class cuddleCommand extends Command {
 	}
 }
 
-module.exports = cuddleCommand;
+module.exports = CuddleCommand;

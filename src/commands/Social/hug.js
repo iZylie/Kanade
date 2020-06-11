@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const client = require("nekos.life");
 const neko = new client();
 
-class hugCommand extends Command {
+class HugCommand extends Command {
 	constructor() {
 		super("hug", {
 			aliases: ["hug"],
@@ -56,4 +56,4 @@ class hugCommand extends Command {
 	}
 }
 
-module.exports = hugCommand;
+module.exports = HugCommand;
