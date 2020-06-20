@@ -107,4 +107,4 @@ class ShippingCommand extends Command {
 	}
 }
 
-module.exports = ShippingCommand;
+// module.exports = ShippingCommand;
