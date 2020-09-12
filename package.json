@@ -28,7 +28,7 @@
 		"fs-nextra": "^0.5.1",
 		"neko-love": "^2.0.2",
 		"nekos.life": "^2.0.7",
-		"node-fetch": "^2.6.0",
+		"node-fetch": "^2.6.1",
 		"nodemon": "^2.0.4",
 		"path": "^0.12.7",
 		"sequelize": "^5.21.10",
